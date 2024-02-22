@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script>
+		function cr()
+		{
+			semester.style.visibility='visible';
+		}
+		function faculty()
+		{
+			semester.style.visibility='hidden';
+		}
+		function pass3() {
+			submit1.style.visibility = 'hidden';
+			semester.style.visibility='hidden';
+
+		}
+		function pass() {
+			if (pass1.value == "") {
+				pass1.style.background = 'yellow';
+				alert("EMPTY");
+				pass1.focus();
+				return false;
+			}
+			else if (pass1.value != pass2.value) {
+				pass2.style.background = 'yellow'; alert("passwords are not matching ");
+				pass2.focus();
+				return false;
+			}
+
+
+			else {
+				submit1.style.visibility = 'visible'; pass.style.background = 'White'; alert("Password is correct");
+				return true;
+			}
+
+		}
+
+	</script>
+
+
+
+
+	<meta charset="utf-8">
+	<meta name="description" content=" Classroom Management System">
+	<meta name="keywords" content="Classroom Management ->Admin & ->Users">
+	<meta name="author" content="Laterals">
+	<title>Classroom Management System| Home</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="icon" href="./img/.">
+</head>
+
+<body onload="pass3()">
+
+	<div class="dar">
+		<center>
+			<h1 class="large">CLASSROOM MANAGEMENT SYSTEM</h1><img src="./img/nie_logo.png" alt="h" height="150px"
+				width="250px" class="center">
+		</center>
+	</div>
+	<header>
+		<div class="container">
+			<div id="brading">
+
+				<h1><span class="highlight">NIE </span>CLASSROOM MANAGEMENT </h1>
+
+
+
+
+				<nav>
+					<ul>
+						<li class="current"><a href="http://localhost/cms/Project/Html/index.html">Home</a></li>
+						
+					</ul>
+				</nav>
+			</div>
+	</header>
+	<center>
+		<marquee>
+			<h1>Welcome To NIE Classroom Management </h1>
+		</marquee>
+		<section id="showcase">
+			<div class="container">
+
+			</div>
+		</section>
+		<center>
+			<h3>New User Register</h3>
+		</center>
+		<form class="form1" action="http://localhost/crms/php/userreg.php" method="post">
+			<center>
+				<table border="1" align="center" style="background-color: #61a6d0;">
+					<table border="1" align="center" style="background-color: #61a6d0;">
+						<caption style="background-color: #0477be;">Registration form</caption>
+						<tr>
+							<th>Enter Your First Name</th>
+							<td><input type="text" name="fname" id="fn1" required /></td>
+						</tr>
+						<tr>
+							<th>Enter Your Last Name</th>
+							<td><input type="text" name="lname" id="ln1" /></td>
+						</tr>
+						<tr>
+							<th>Enter Your Register No</th>
+							<td><input type="text" name="regno" id="regno1" required /></td>
+						</tr>
+						<tr>
+							<th>Enter Your Password</th>
+							<td><input type="password" name="password" id="pass1" required /></td>
+						</tr>
+						<tr>
+							<th>Re-Enter Your Password</th>
+							<td><input type="password" name="password1" id="pass2" required /></td>
+						</tr>
+						<tr>
+							<th>Enter Your Email</th>
+							<td><input type="email" name="email" id="email1" /></td>
+						</tr>
+						<tr>
+							<th>Enter Your Mobile No</th>
+							<td><input type="tel" name="mobno" id="mno1" pattern="[0-9]{10}" required /></td>
+						</tr>
+
+	
+						<tr>
+							<th>Select Your Position</th>
+							<td><input type="radio" name="position" value="faculty" onClick="faculty()" required /> Faculty
+								<br>
+								<input
+									type="radio" name="position" value="cr" onClick="cr()"/> Class Representative</td>
+						</tr>
+						<tr id="semester">
+							<th>Semester</th>
+							<td><input type="number" name="sem" maximum="8"/></td>
+						</tr>
+						<tr>
+							<th>Select Your Department</th>
+							<td> <select name="dept" required>
+									<option value="" selected="selected" disabled="disabled">Select your Department
+									</option>
+									<option value="CS&E">Computer Science & Engg </option>
+									<option value="IS&E">Information Science & Engg </option>
+
+									<option value="CE">Civil Engineering</option>
+									<option value="E&C">Electronics & Communication</option>
+									<option value="E&E">Electrical & Electronics</option>
+									<option value="ME">Mechanical Engineering</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th>Upload your pic</th>
+							<td><input type="file" name="img" value=""/></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center"> <input type="BUTTON" value="Verify" class="button1"
+									onClick="pass()" /><input type="submit" class="button1" value="Register"
+									id="submit1" /> <input type="reset" value="Clear" class="button1" /> </td>
+						</tr>
+						</font>
+					</table>
+			</center>
+		</form><br><br>
+		<section id="bottom"></section>
+
+    <div class="dark">
+      <h3>Our Visite Timings</h3>
+      <hr>
+  
+      --》 Monday-Friday 09:00-05:00<br>
+      --》 Saturday 09:30-01:00<br>
+      --》 Sunday closed
+    </div>
+  
+  
+    <div class="dark">
+  
+      <h3>Our Staff</h3>
+      <hr>
+  
+  
+      ☆ Admin ******<br>
+      ☆ Assistant ******<br>
+      ☆ Contact *******
+  
+    </div>
+  
+  
+    <footer>
+      <img src="./img/nie_logo.png" alt="" height="40px" width="50px">
+      <p>CLASSROOM MANAGEMENT SYSTEM @COPY; IS&E 2024</p>
+    </footer>
+  </body>
+  
+  </html>
